@@ -1,0 +1,42 @@
+function saveAnswer(questionName, nextpage){
+    const selected=document.querySelector(`input[name ="${questionName}"]:checked`);
+}
+if (selected){
+    localStorage.setItem(questionName,selected.value);
+
+    window.location.href=nextpage;
+}else{
+    alert("please select an option")
+}
+function submitQuiz(){
+    const selected=document.querySelector(`inpu[name="q3"]:checked`);
+
+    if (selected){
+        localStorage.setItem('q3',selected.value);
+
+        // showResults();
+    
+    }else{
+        alert("Select an option");
+    }
+}
+function showResults(){
+    let score=0;
+    const correctAnswers={
+        q1:"b",
+        q2:"a",
+        q3:"b"
+    };
+    for (let ley in correctAnswers){
+        if(localStorage.getItem(key)=== correctAnswers[key]){
+            score ++;
+        }
+    }
+
+}
+const resultDiv=document.getElementById("#results")
+if(resultDiv){
+    resultDiv.innerText=`you have scored${score}out of $`
+    {Object.keys(correctAnswers).length};
+}
+localStorage.clear();
